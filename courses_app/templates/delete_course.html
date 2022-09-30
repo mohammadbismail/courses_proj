@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a course</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Are you sure you want to delete the following course?</h1>
+    <table>
+        {% for course in courses%}
+        <tr>
+            <td>Name:</td>
+            <td>{{course.name}}</td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>{{course.description}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">No</a>
+    <a href="/remove_course/{{course.id}}/">Yes, I want to delete this!</a>
+
+</body>
+
+</html>
